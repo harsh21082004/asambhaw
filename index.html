@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asambhaw 🤣</title>
+  <link rel="icon" href="asambhaw.png" type="image/png">
+  <style>
+    body {
+        background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden; /* Prevent scroll bars */
+    }
+
+    body h1{
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body p{
+        position: absolute;
+        font-size: large;
+        padding: 20px;
+        right: 0;
+        bottom: 0;
+        color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .tiltedImage {
+        width: 150px;
+        height: 150px;
+      position: absolute;
+      transform-origin: center center;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>Click to do Asambhaw work😂</h1>
+  <!-- <img id="rotatingImage" src="https://memes.co.in/Uploads/Media/Nov22/Sun06/757/58a7d225.jpg" alt="Rotating Image"> -->
+  <script>
+    function placeTiltedImage(event) {
+      // Create a new image element
+      const newImage = document.createElement('img');
+      newImage.src = 'asambhaw.png'; // Replace with the actual path to your image
+      newImage.alt = 'Tilted Image';
+      newImage.className = 'tiltedImage';
+
+      // Get the dimensions of the image
+      const imageWidth = 100; // replace with the actual width of your image
+      const imageHeight = 100; // replace with the actual height of your image
+
+      // Get the coordinates of the click
+      const x = event.clientX;
+      const y = event.clientY;
+
+      // Set the image position
+      newImage.style.left = `${x - imageWidth / 2}px`;
+      newImage.style.top = `${y - imageHeight / 2}px`;
+
+      // Generate a random rotation angle between 0 and 360 degrees
+      const rotationAngle = Math.floor(Math.random() * 360);
+      newImage.style.transform = `rotate(${rotationAngle}deg)`;
+
+      // Append the new image to the body
+      document.body.appendChild(newImage);
+    }
+
+    // Add a click event listener to the body
+    document.body.addEventListener('click', placeTiltedImage);
+  </script>
+  <script>
+    // Function to play the desired sound
+    function playSound() {
+      const audio = new Audio('asambhaw.mp3'); // Replace with your sound file path
+      audio.play();
+    }
+
+    // Add a click event listener to the body
+    document.body.addEventListener('click', playSound);
+  </script>
+  <footer>
+    <p><b>Made by Harsh Tiwari</b><br>Full source on <a href="">Github</a></p>
+  </footer>
+</body>
+</html>
